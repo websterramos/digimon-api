@@ -1,9 +1,10 @@
 {
   "name": "digimon-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --build",
+    "dev": "ts-node-dev src/main.ts"
   },
   "keywords": [],
   "author": "",
