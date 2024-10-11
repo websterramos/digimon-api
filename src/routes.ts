@@ -11,4 +11,9 @@ router.get("/", (req: Request, res: Response) => {
 
 router.get("/api/digimon", digimonController.getAllDigimon(prisma));
 
+router.get(
+  "/api/digimon/name/:name",
+  digimonController.getDigimonByName(prisma)
+);
+
 export { router };
