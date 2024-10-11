@@ -1,0 +1,14 @@
+import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
+import { getAllDigimonService } from "../services/get-all-digimon.service";
+
+export function getAllDigimon(prisma: PrismaClient) {
+  return async function (req: Request, res: Response): Promise<any> {
+    try {
+      const allDigimon = await getAllDigimonService(prisma);
+      return res.status(200).json(allDigimon);
+    } catch (error) {
+      return res.status(500).json({ message: "Internal server error" });
+    }
+  };
+}
