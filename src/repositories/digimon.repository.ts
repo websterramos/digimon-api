@@ -9,3 +9,9 @@ export async function getDigimonByName(name: string, prisma: PrismaClient) {
     where: { name },
   });
 }
+
+export async function getDigimonByLevel(level: string, prisma: PrismaClient) {
+  return prisma.digimon.findMany({
+    where: { level },
+  });
+}

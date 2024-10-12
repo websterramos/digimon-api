@@ -16,4 +16,9 @@ router.get(
   digimonController.getDigimonByName(prisma)
 );
 
+router.get(
+  "/api/digimon/level/:level",
+  digimonController.getDigimonByLevel(prisma)
+);
+
 export { router };
