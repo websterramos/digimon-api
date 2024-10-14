@@ -5,13 +5,23 @@ export async function getAllDigimon(prisma: PrismaClient) {
 }
 
 export async function getDigimonByName(name: string, prisma: PrismaClient) {
-  return prisma.digimon.findUnique({
-    where: { name },
+  return prisma.digimon.findFirst({
+    where: {
+      name: {
+        equals: name,
+        mode: "insensitive",
+      },
+    },
   });
 }
 
 export async function getDigimonByLevel(level: string, prisma: PrismaClient) {
   return prisma.digimon.findMany({
-    where: { level },
+    where: {
+      level: {
+        contains: level.toLowerCase(),
+        mode: "insensitive",
+      },
+    },
   });
 }
