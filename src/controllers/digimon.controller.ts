@@ -40,13 +40,6 @@ export function getDigimonByLevel(prisma: PrismaClient) {
   return async function (req: Request, res: Response) {
     try {
       const { level } = req.params;
-      const levelValid = isValidLevel(level);
-
-      if (!levelValid) {
-        res.status(422).json({ message: "Level does not exist" });
-        return;
-      }
-
       const digimon = await getDigimonByLevelService(level, prisma);
 
       res.status(200).json(digimon);
@@ -55,16 +48,4 @@ export function getDigimonByLevel(prisma: PrismaClient) {
       res.status(response.status).json(response.error);
     }
   };
-}
-
-function isValidLevel(input: string): boolean {
-  const validLevels = [
-    "Fresh",
-    "In Training",
-    "Rookie",
-    "Champion",
-    "Mega",
-    "Ultimate",
-  ];
-  return validLevels.includes(input);
 }
