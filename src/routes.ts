@@ -15,13 +15,13 @@ router.get("/", (req: Request, res: Response) => {
 router.get("/api/digimon", digimonController.getAllDigimon(prisma));
 
 router.get(
-  "/api/digimon/name/:name",
+  "/api/digimon/name/:name?",
   inputValidateMiddleware(nameSchema),
   digimonController.getDigimonByName(prisma)
 );
 
 router.get(
-  "/api/digimon/level/:level",
+  "/api/digimon/level/:level?",
   inputValidateMiddleware(levelSchema),
   digimonController.getDigimonByLevel(prisma)
 );
