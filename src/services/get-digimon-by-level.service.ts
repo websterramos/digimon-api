@@ -8,6 +8,6 @@ export async function getDigimonByLevelService(
   try {
     return getDigimonByLevel(level, prisma);
   } catch (error) {
-    throw error;
+    if (error instanceof Error) throw new Error(error.message);
   }
 }

@@ -8,6 +8,6 @@ export async function getDigimonByNameService(
   try {
     return getDigimonByName(name, prisma);
   } catch (error) {
-    throw error;
+    if (error instanceof Error) throw new Error(error.message);
   }
 }
