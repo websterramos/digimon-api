@@ -6,7 +6,8 @@
     "build": "tsc --build",
     "dev": "ts-node-dev src/main.ts",
     "test": "jest",
-    "migrate:reset": "dotenv -e .env.test npx prisma migrate reset"
+    "migrate:reset": "dotenv -e .env.test npx prisma migrate reset",
+    "start": "node dist/main.js"
   },
   "keywords": [],
   "author": "",
