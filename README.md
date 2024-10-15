@@ -61,11 +61,31 @@ Esta é uma API RESTful desenvolvida em Node.js com TypeScript, utilizando Prism
 
 ## Executando a Aplicação
 
-Para rodar a aplicação, use:
+### Para desenvolvimento
+
+Para iniciar o ambiente de desenvolvimento, utilize o seguinte comando:
 
 ```bash
-npm start
+npm run dev
 ```
+
+### Para Produção
+
+Antes de iniciar a aplicação em produção, siga os passos abaixo:
+
+1. **Transpile o Código TypeScript**  
+   Execute o seguinte comando para transpilação:
+
+   ```bash
+   npm run build
+   ```
+
+2. **Inicie a Aplicação**  
+   Depois de transpilar, inicie a aplicação com o comando:
+
+   ```bash
+   npm start
+   ```
 
 A API estará disponível em http://localhost:3000.
 
