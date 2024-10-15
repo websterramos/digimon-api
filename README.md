@@ -99,8 +99,8 @@ npm test
 
 ## Endpoints da API
 
-| Método | Endpoint                    | Descrição                                | Parâmetros                |     |
-| ------ | --------------------------- | ---------------------------------------- | ------------------------- | --- |
+| Método | Endpoint                    | Descrição                                | Parâmetros                |
+| ------ | --------------------------- | ---------------------------------------- | ------------------------- |
 | GET    | `/api/digimon`              | Retorna todos os Digimons.               | Nenhum                    |
 | GET    | `/api/digimon/name/:name`   | Retorna um Digimon específico pelo nome. | `name`: Nome do Digimon   |
 | GET    | `/api/digimon/level/:level` | Retorna todos os Digimons pelo nível.    | `level`: Nível do Digimon |
